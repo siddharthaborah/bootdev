@@ -44,43 +44,43 @@
 00000000000i[USBCTL] Pluggable USB devices
 00000000000i[USBCTL]   hub disk cdrom floppy mouse tablet keypad keyboard
 00000000000i[USBCTL]   printer
-00000000000i[MEM0  ] allocated memory at 0x705f00f27010. after alignment, vector=0x705f00f28000, block_size = 128K
+00000000000i[MEM0  ] allocated memory at 0x7185a09c3010. after alignment, vector=0x7185a09c4000, block_size = 128K
 00000000000i[MEM0  ] 32.00MB
 00000000000i[MEM0  ] mem block size = 0x00020000, blocks=256
 00000000000i[MEM0  ] rom at 0xfffe0000/131072 ('/usr/share/bochs/BIOS-bochs-latest')
 00000000000i[CPU0  ] WARNING: 3DNow! is not implemented yet !
 00000000000i[DEV   ] will paste characters every 100 iodev timer ticks
-00000000000i[      ] lt_dlhandle is 0x5bab0ac721b0
+00000000000i[      ] lt_dlhandle is 0x5bb1dfc001f0
 00000000000i[PLUGIN] loaded plugin libbx_soundalsa.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3a6e30
+00000000000i[      ] lt_dlhandle is 0x5bb1e0334f10
 00000000000i[PLUGIN] loaded plugin libbx_pci.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3a76a0
+00000000000i[      ] lt_dlhandle is 0x5bb1e0335780
 00000000000i[PLUGIN] loaded plugin libbx_pci2isa.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3a7700
+00000000000i[      ] lt_dlhandle is 0x5bb1e03357e0
 00000000000i[PLUGIN] loaded plugin libbx_usb_uhci.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c5580
+00000000000i[      ] lt_dlhandle is 0x5bb1e0353660
 00000000000i[PLUGIN] loaded plugin libbx_acpi.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c60b0
+00000000000i[      ] lt_dlhandle is 0x5bb1e0354190
 00000000000i[PLUGIN] loaded plugin libbx_hpet.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c6f60
+00000000000i[      ] lt_dlhandle is 0x5bb1e0355040
 00000000000i[PLUGIN] loaded plugin libbx_cmos.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c7910
+00000000000i[      ] lt_dlhandle is 0x5bb1e03559f0
 00000000000i[PLUGIN] loaded plugin libbx_dma.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c82b0
+00000000000i[      ] lt_dlhandle is 0x5bb1e0356390
 00000000000i[PLUGIN] loaded plugin libbx_pic.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c8b10
+00000000000i[      ] lt_dlhandle is 0x5bb1e0356bf0
 00000000000i[PLUGIN] loaded plugin libbx_pit.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3c9500
+00000000000i[      ] lt_dlhandle is 0x5bb1e03575e0
 00000000000i[PLUGIN] loaded plugin libbx_vga.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3cabb0
+00000000000i[      ] lt_dlhandle is 0x5bb1e0358c90
 00000000000i[PLUGIN] loaded plugin libbx_floppy.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3cb8a0
+00000000000i[      ] lt_dlhandle is 0x5bb1e0359980
 00000000000i[PLUGIN] loaded plugin libbx_ioapic.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3cc0e0
+00000000000i[      ] lt_dlhandle is 0x5bb1e035a1c0
 00000000000i[PLUGIN] loaded plugin libbx_keyboard.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3cc920
+00000000000i[      ] lt_dlhandle is 0x5bb1e035aa00
 00000000000i[PLUGIN] loaded plugin libbx_harddrv.so
-00000000000i[      ] lt_dlhandle is 0x5bab0b3ce910
+00000000000i[      ] lt_dlhandle is 0x5bb1e035c9f0
 00000000000i[PLUGIN] loaded plugin libbx_pci_ide.so
 00000000000i[PLUGIN] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV   ] i440FX PMC present at device 0, function 0
@@ -88,7 +88,7 @@
 00000000000i[DEV   ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[PLUGIN] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS  ] Using local time for initial clock
-00000000000i[CMOS  ] Setting initial clock to: Sat Oct 10  8:24:55   2026 tz=utc (time0=1791620695)
+00000000000i[CMOS  ] Setting initial clock to: Tue Oct 13 20:08:10   2026 tz=utc (time0=1791922090)
 00000000000i[PLUGIN] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA   ] channel 4 used by cascade
 00000000000i[PLUGIN] init_dev of 'pic' plugin device by virtual method
@@ -245,5 +245,5 @@
 00000000000i[CPU0  ] | EIP=0000fff0 (0000fff0)
 00000000000i[CPU0  ] | CR0=0x60000010 CR2=0x00000000
 00000000000i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
-00000000000i[CMOS  ] Last time: 1791620695 tz=utc (Sat Oct 10  8:24:55   2026)
+00000000000i[CMOS  ] Last time: 1791922090 tz=utc (Tue Oct 13 20:08:10   2026)
 00000000000i[SIM   ] quit_sim called with exit code 0
