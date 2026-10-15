@@ -1,0 +1,47 @@
+1. # Build the boot sector from assembly source
+nasm -f bin boot_sect.asm -o boot_sect.bin
+
+# Run the boot sector in QEMU as a floppy image
+qemu-system-i386 \
+  -drive file=boot_sect.bin,format=raw,if=floppy \
+  -boot order=a
+
+# Optional: use a serial console instead of a graphical display
+qemu-system-i386 \
+  -drive file=boot_sect.bin,format=raw,if=floppy \
+  -boot order=a \
+  -nographic
+
+# Optional: enable a debugger (useful for OS development debugging)
+qemu-system-i386 \
+  -drive file=boot_sect.bin,format=raw,if=floppy \
+  -boot order=a \
+  -s -S
+
+# Optional: run with a monitor window for debugging commands
+qemu-system-i386 \
+  -drive file=boot_sect.bin,format=raw,if=floppy \
+  -boot order=a \
+  -monitor stdio
+
+# Explanation:
+# - nasm -f bin boot_sect.asm -o boot_sect.bin
+#   Assembles the 16-bit boot sector source into a raw binary file.
+#
+# - qemu-system-i386
+#   Uses the i386 emulator, which is suitable for classic 16-bit BIOS bootloaders.
+#
+# - -drive file=boot_sect.bin,format=raw,if=floppy
+#   Loads the generated binary as a raw floppy disk image.
+#
+# - -boot order=a
+#   Tells QEMU to boot from the first floppy drive (A:), which is how a boot sector is typically started.
+#
+# - -nographic
+#   Runs QEMU without a graphical window; useful when working from a terminal.
+#
+# - -s -S
+#   Starts the QEMU GDB server and stops execution at startup, which is helpful for debugging OS code.
+#
+# - -monitor stdio
+#   Opens the QEMU monitor in the terminal so you can inspect state and send runtime commands.
