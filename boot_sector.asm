@@ -4,7 +4,7 @@
 ;
 
 mov ah, 0x0E      ; BIOS teletype function
-                  ; int 10h/ah = 0eh -> scrolling teletype BIOS routine
+                  ; int 10/ah = 0eh -> scrolling teletype BIOS routine
 
 mov al, 'H'       ; Load character 'H' into AL
 int 0x10          ; Call BIOS interrupt to print character

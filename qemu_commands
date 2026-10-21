@@ -1,5 +1,5 @@
 1. # Build the boot sector from assembly source
-nasm -f bin boot_sect.asm -o boot_sect.bin
+nasm -f bin boot_sector.asm -o boot_sector.bin
 
 # Run the boot sector in QEMU as a floppy image
 qemu-system-i386 \
