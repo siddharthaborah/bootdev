@@ -1,29 +1,36 @@
-
 ;
-; A simple boot sector that prints a message to the screen using a BIOS routine
+; A simple boot sector program that demonstrates addressing.
 ;
-
+         ; Origin, where the BIOS loads the boot sector
 mov ah, 0x0E      ; BIOS teletype function
                   ; int 10/ah = 0eh -> scrolling teletype BIOS routine
 
-mov al, 'H'       ; Load character 'H' into AL
-int 0x10          ; Call BIOS interrupt to print character
+; first attempt
+mov al, the_secret
+int 0x10          ; Does this print an X ?
 
-mov al, 'e'       ; Load character 'e' into AL
-int 0x10          ; Call BIOS interrupt to print character
-mov al, 'l'       ; Load character 'l' into AL
-int 0x10          ; Call BIOS interrupt to print character
-mov al, 'l'       ; Load character 'l' into AL
-int 0x10          ; Call BIOS interrupt to print character
-mov al, 'o'       ; Load character 'o' into AL
-int 0x10          ; Call BIOS interrupt to print character
+; second attempt
+mov al, [the_secret]
+int 0x10          ; Does this print an X ?
+
+; Third attempt
+mov bx , the_secret
+add bx, 0x7c00
+mov al, [bx]
+int 0x10          ; Does this print an X ?
+
+; Fourth attempt
+mov al, [0x7C1D]
+int 0x10          ; Does this print an X ?
 
 jmp $             ; Jump to the current address(i.e. forever)
 
-;
-; Padding and magic BIOS number
-;
 
-times 510-($-$$) db 0 ; Pad the boot sector out with zeros to 510 bytes
-dw 0xAA55             ; Last two bytes form the magic number,
+the_secret:
+    db 'X'
+
+; Padding and magic BIOS number
+
+times 510 - ($ - $$) db 0
+dw 0xaa55             ; Last two bytes form the magic number,
                       ; so BIOS knows we are a boot sector
