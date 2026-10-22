@@ -1,7 +1,7 @@
 ;
 ; A simple boot sector program that demonstrates addressing.
 ;
-         ; Origin, where the BIOS loads the boot sector
+         
 mov ah, 0x0E            ; BIOS teletype function
                         ; int 10/ah = 0eh -> scrolling teletype BIOS routine
 
